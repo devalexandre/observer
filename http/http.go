@@ -1,4 +1,4 @@
-package helpers
+package http
 
 import (
 	"fmt"
@@ -21,4 +21,8 @@ func SendPostJson(url string, json string) (string, error) {
 	}
 	fmt.Printf("%s\n", res.Status)
 	return "", nil
+}
+
+func SendNotification() {
+	SendPostJson("http://localhost:8080/notification", "{\"title\":\"test\",\"body\":\"test\"}")
 }
